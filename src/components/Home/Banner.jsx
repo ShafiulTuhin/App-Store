@@ -1,9 +1,9 @@
 import { FaAppStore, FaGooglePlay } from "react-icons/fa";
-
+import BannerImg from "../../assets/images/hero.png";
 const Banner = () => {
   return (
-    <div className="text-center">
-      <h2 className="font-bold text-[#001931] text-5xl">
+    <div className="text-center max-w-[1320px] mx-auto lg:pt-20 pt-8">
+      <h2 className="font-bold text-[#001931] lg:text-5xl text-3xl">
         We build <br /> <span className="text-purple-500">Productive</span> Apps
       </h2>
       <p className="text-[#627382] mt-5 mb-10">
@@ -20,6 +20,11 @@ const Banner = () => {
           <FaAppStore color="purple"></FaAppStore>
           App Store
         </button>
+      </div>
+      <div>
+        <div className="mt-6">
+          <img src={BannerImg} alt="" className="mx-auto image-full" />
+        </div>
       </div>
     </div>
   );
