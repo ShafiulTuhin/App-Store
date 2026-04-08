@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { FaDownload, FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router";
 import { HashLoader } from "react-spinners";
 
 const TrendingApp = () => {
   const [apps, setApps] = useState([]);
   const [loading, setLoading] = useState(true);
   console.log(apps);
+  const navigate = useNavigate();
+  const handleShowAll = () => {
+    navigate("/apps");
+  };
 
   useEffect(() => {
     const fetchApps = async () => {
@@ -52,7 +57,10 @@ const TrendingApp = () => {
         </div>
       )}
       <div className="flex justify-center  mt-7">
-        <button className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white">
+        <button
+          onClick={handleShowAll}
+          className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"
+        >
           Show All
         </button>
       </div>
