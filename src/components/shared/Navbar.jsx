@@ -41,6 +41,9 @@ const Navbar = () => {
               <li>
                 <MyNavLink to={"/installations"}>Installations</MyNavLink>
               </li>
+              <li>
+                <MyNavLink to={"/dashboard"}>Dashboard</MyNavLink>
+              </li>
             </ul>
           </div>
 
@@ -53,6 +56,7 @@ const Navbar = () => {
           <MyNavLink to={"/"}>Home</MyNavLink>
           <MyNavLink to={"/apps"}>Apps</MyNavLink>
           <MyNavLink to={"/installations"}>Installations</MyNavLink>
+          <MyNavLink to={"/dashboard"}>Dashboard</MyNavLink>
         </div>
 
         {/* Right: Button */}

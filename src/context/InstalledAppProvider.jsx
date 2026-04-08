@@ -4,8 +4,6 @@ export const InstalledAppContext = createContext();
 
 const InstalledAppProvider = ({ children }) => {
   const [installedApps, setInstalledApps] = useState([]);
-  console.log(installedApps);
-
   const handleInstalledApps = (newApp) => {
     const isExist = installedApps.find((app) => app.id == newApp.id);
 

@@ -5,11 +5,18 @@ import { FaStar } from "react-icons/fa";
 import { VscCodeReview } from "react-icons/vsc";
 import useApps from "../components/hooks/useApps";
 import { HashLoader } from "react-spinners";
+import NoDataFound from "../ui/NoDataFound";
+import { toast } from "react-toastify";
 
 const InstalledAppsPage = () => {
-  const { installedApps } = useContext(InstalledAppContext);
+  const { installedApps, setInstalledApps } = useContext(InstalledAppContext);
   const { loading } = useApps();
-  console.log(installedApps);
+
+  const handleDeleteInstalledApps = (newApp) => {
+    const uninstalledApp = installedApps.filter((app) => app.id !== newApp.id);
+    setInstalledApps(uninstalledApp);
+    toast.success(`${newApp.title} uninstalled successfully`);
+  };
 
   if (loading) {
     return (
@@ -21,20 +28,23 @@ const InstalledAppsPage = () => {
   if (installedApps.length === 0) {
     return (
       <div>
-        <h2>No data found</h2>
+        <NoDataFound></NoDataFound>
       </div>
     );
   }
 
   return (
-    <div className="max-w-[600px] mx-auto lg:py-20 py-10 px-2 lg:px-0">
+    <div className="max-w-[800px] mx-auto lg:py-15 py-10 px-2 lg:px-0">
+      <h2 className="mb-4 font-medium text-[#001932]">
+        {installedApps.length} App{installedApps.length > 1 ? "s" : ""} found
+      </h2>
       {installedApps.map((app) => (
         <div className="bg-slate-200 mb-4 border border-gray-400 p-4 flex justify-between items-center rounded-lg">
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-2 items-center">
             <img src={app.image} alt="" className="w-20 h-20" />
             <div>
               <h2 className="font-bold">{app.title}</h2>
-              <div className=" mt-2 flex gap-5">
+              <div className="mt-2 md:flex gap-5">
                 <div className="flex gap-1 items-center">
                   <FaDownload color="#1cd641" />
                   <p className="text-[#627382] ">{app.downloads}</p>
@@ -50,7 +60,12 @@ const InstalledAppsPage = () => {
               </div>
             </div>
           </div>
-          <button className="btn btn-success text-white">Uninstall</button>
+          <button
+            onClick={() => handleDeleteInstalledApps(app)}
+            className="btn btn-success text-white"
+          >
+            Uninstall
+          </button>
         </div>
       ))}
     </div>
