@@ -1,16 +1,45 @@
-# React + Vite
+App-Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive social app store built with React and Next.js, showcasing frontend skills, state management, API integration, and interactive data visualization using Tailwind CSS and DaisyUI. This project is part of my hands-on learning journey as a MERN stack developer in training.
 
-Currently, two official plugins are available:
+🚀 Features
+Fully responsive design using Tailwind CSS and DaisyUI.
+Dynamic data fetching and state management with React hooks and Context API.
+Interactive charts (Pie/Bar) for visualizing app installations using Recharts.
+Sorting and filtering functionality for a better user experience.
+Persistent data storage using LocalStorage.
+Modern UI/UX with cards, buttons, and clean layout.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+💻 Tech Stack
+Frontend: React, Next.js
+Styling: Tailwind CSS, DaisyUI
+Data Visualization: Recharts
+State Management: React Hooks & Context API
+Data Storage: LocalStorage
+Languages: JavaScript, HTML5, CSS3
 
-## React Compiler
+Project Structure
+src/components – Reusable components (cards, charts, buttons)
+src/pages – Next.js pages and routing
+src/context – Context API setup for global state
+src/assets – Images and logos
+src/data.json – Sample app data
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📈 Learning Outcomes
+Gained hands-on experience with React js integration.
+Practiced prop drilling, lifting state, and context API for efficient state management.
+Implemented responsive layouts with Tailwind CSS and DaisyUI components.
+Learned chart visualization using Recharts.
+Understood localStorage and dynamic sorting/filtering.
 
-## Expanding the ESLint configuration
+# Clone the repository
+git clone https://github.com/ShafiulTuhin/App-Store.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Navigate to the project folder
+cd App-Store
+
+# Install dependencies
+npm install
+
+# Run the project
+npm run dev
